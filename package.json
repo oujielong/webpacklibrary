@@ -1,0 +1,25 @@
+{
+  "name": "webpacklibrary",
+  "version": "1.0.0",
+  "main": "dist/webpack-numbers.js",
+  "description": "",
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oujielong/webpacklibrary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oujielong/webpacklibrary/issues"
+  },
+  "homepage": "https://github.com/oujielong/webpacklibrary#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "lodash": "^4.17.15",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
