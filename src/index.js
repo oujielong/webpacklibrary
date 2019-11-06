@@ -1,4 +1,3 @@
-import _ from "lodash";
 import numRef from "./ref.json";
 import A from "./library/a";
 import B from "./library/b";
