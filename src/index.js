@@ -1,29 +1,12 @@
-import numRef from "./ref.json";
-import A from "./library/a";
-import B from "./library/b";
+// import { file } from "./library/globals.js";, 结合导出的loader时需要 调整至配置文件
 
-export function numToWord(num) {
-  return _.reduce(
-    numRef,
-    (accum, ref) => {
-      return ref.num === num ? ref.word : accum;
-    },
-    ""
-  );
+function component() {
+  var element = document.createElement("div");
+  element.innerHTML = join(["Hello", "webpack"], " ");
+  var element = document.createElement("div");
+  this.alert("Hmmm, this probably isn't a great idea...");
+  this.alert(file);
+  return element;
 }
 
-export function wordToNum(word) {
-  return _.reduce(
-    numRef,
-    (accum, ref) => {
-      return ref.word === word && word.toLowerCase() ? ref.num : accum;
-    },
-    -1
-  );
-}
-export function out() {
-  return {
-    a: A.a,
-    b: B.b
-  };
-}
+document.body.appendChild(component());

@@ -123,46 +123,21 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: numToWord, wordToNum, out */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(_) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"numToWord\", function() { return numToWord; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"wordToNum\", function() { return wordToNum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"out\", function() { return out; });\n/* harmony import */ var _ref_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ref.json */ \"./src/ref.json\");\nvar _ref_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./ref.json */ \"./src/ref.json\", 1);\n/* harmony import */ var _library_a__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./library/a */ \"./src/library/a.js\");\n/* harmony import */ var _library_b__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./library/b */ \"./src/library/b.js\");\n\r\n\r\n\r\n\r\nfunction numToWord(num) {\r\n  return _.reduce(\r\n    _ref_json__WEBPACK_IMPORTED_MODULE_0__,\r\n    (accum, ref) => {\r\n      return ref.num === num ? ref.word : accum;\r\n    },\r\n    \"\"\r\n  );\r\n}\r\n\r\nfunction wordToNum(word) {\r\n  return _.reduce(\r\n    _ref_json__WEBPACK_IMPORTED_MODULE_0__,\r\n    (accum, ref) => {\r\n      return ref.word === word && word.toLowerCase() ? ref.num : accum;\r\n    },\r\n    -1\r\n  );\r\n}\r\nfunction out() {\r\n  return {\r\n    a: _library_a__WEBPACK_IMPORTED_MODULE_1__[\"default\"].a,\r\n    b: _library_b__WEBPACK_IMPORTED_MODULE_2__[\"default\"].b\r\n  };\r\n}\r\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\")))\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/library/a.js":
-/*!**************************!*\
-  !*** ./src/library/a.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({ a: \"a.js\" });\r\n\n\n//# sourceURL=webpack:///./src/library/a.js?");
+eval("/* WEBPACK VAR INJECTION */(function(join) {/*** IMPORTS FROM imports-loader ***/\n(function() {\nvar {file} = __webpack_require__(/*! ./library/globals.js */ \"./src/library/globals.js\");\n\n// import { file } from \"./library/globals.js\";, 结合导出的loader时需要 调整至配置文件\r\n\r\nfunction component() {\r\n  var element = document.createElement(\"div\");\r\n  element.innerHTML = join([\"Hello\", \"webpack\"], \" \");\r\n  var element = document.createElement(\"div\");\r\n  this.alert(\"Hmmm, this probably isn't a great idea...\");\r\n  this.alert(file);\r\n  return element;\r\n}\r\n\r\ndocument.body.appendChild(component());\r\n\n}.call(window));\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\")[\"join\"]))\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/library/b.js":
-/*!**************************!*\
-  !*** ./src/library/b.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/library/globals.js":
+/*!********************************!*\
+  !*** ./src/library/globals.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({ b: \"b.js\" });\r\n\n\n//# sourceURL=webpack:///./src/library/b.js?");
-
-/***/ }),
-
-/***/ "./src/ref.json":
-/*!**********************!*\
-  !*** ./src/ref.json ***!
-  \**********************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, default */
-/***/ (function(module) {
-
-eval("module.exports = JSON.parse(\"[{\\\"num\\\":1,\\\"word\\\":\\\"One\\\"},{\\\"num\\\":2,\\\"word\\\":\\\"Two\\\"},{\\\"num\\\":3,\\\"word\\\":\\\"Three\\\"},{\\\"num\\\":4,\\\"word\\\":\\\"Four\\\"},{\\\"num\\\":5,\\\"word\\\":\\\"Five\\\"},{\\\"num\\\":0,\\\"word\\\":\\\"Zero\\\"}]\");\n\n//# sourceURL=webpack:///./src/ref.json?");
+eval("var file = \"blah.txt\";\r\nvar helpers = {\r\n  test: function() {\r\n    console.log(\"test something\");\r\n  },\r\n  parse: function() {\r\n    console.log(\"parse something\");\r\n  }\r\n};\r\n\n\n/*** EXPORTS FROM exports-loader ***/\nexports[\"file\"] = (file);\nexports[\"parse\"] = (helpers.parse);\n\n//# sourceURL=webpack:///./src/library/globals.js?");
 
 /***/ })
 
