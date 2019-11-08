@@ -8,7 +8,10 @@ function component() {
 }
 document.body.appendChild(component());
 
-fetch("/proxy/users")
+fetch(
+  "http://172.16.100.60:18133/CBM/M00/00/1B/rBBkGF3E4iiAZuSgAABJODubpW451.html?token=1f2b8af13d1e58cd9677f1ce28e2161b&ts=1573184040&ts=1573184031692",
+  { mode: "cors" }
+)
   .then(response => response.json())
   .then(json => {
     console.log(

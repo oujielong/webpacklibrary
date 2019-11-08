@@ -17,13 +17,10 @@ module.exports = {
     // 远程代理
     // 请求 localhsot:8080/proxy/a/b/c --->https://jsonplaceholder.typicode.com/a/b/c
     proxy: {
-      "/proxy": {
-        target: "https://jsonplaceholder.typicode.com", //指定代理的域名
+      "/CBM": {
+        target: "http://172.16.100.60:18133", //指定代理的域名
         changeOrigin: true, // 改变源到url
-        secure: false,
-        pathRewrite: {
-          "^/proxy": ""
-        }
+        secure: false
       }
     }
   },
