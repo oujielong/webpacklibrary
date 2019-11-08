@@ -5,12 +5,36 @@ const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: {
+    polyfills: "./src/polyfills.js",
+    index: "./src/index.js"
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: false,
+    port: 9000,
+    clientLogLevel: "error",
+    // 远程代理
+    // 请求 localhsot:8080/proxy/a/b/c --->https://jsonplaceholder.typicode.com/a/b/c
+    proxy: {
+      "/proxy": {
+        target: "https://jsonplaceholder.typicode.com", //指定代理的域名
+        changeOrigin: true, // 改变源到url
+        secure: false,
+        pathRewrite: {
+          "^/proxy": ""
+        }
+      }
+    }
+  },
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: "dist/*"
     }),
-    new HtmlWebpackPlugin({ title: "Output Management" }),
+    new HtmlWebpackPlugin({
+      title: "Output Management",
+      template: "./index.html"
+    }),
     new webpack.ProvidePlugin({
       _: "lodash",
       join: ["lodash", "join"]
@@ -30,6 +54,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].numbers.js"
+    filename: "[name].js"
   }
 };
